@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+  {% for post in posts %}
+    <div><p>{{ post.id }} {{ post.title}} was posted by {{ post.author }}</p></div>
+  {% endfor %}
+
+{% block content %}
+{% endblock %}

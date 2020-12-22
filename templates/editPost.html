@@ -1,0 +1,32 @@
+{% extends "baseline.html" %}
+
+{% block content %}
+   <h1>New Post</h1>
+   <form action="" method="post">
+      {{ form.hidden_tag() }}
+      <p>
+         {{ form.title.label }}<br>
+         {{ form.title(size=36) }}
+      </p>
+      <p>
+        {{ form.private() }}
+        {{ form.private.label }}
+      </p>
+      <p>
+         {{ form.permissions.label }}<br>
+         {{ form.permissions(size=36) }}
+         {% for error in form.permissions.errors %}
+            <span style="color: red;">[{{ error }}]
+         {% endfor %}
+      </p>
+      <p>
+         {{ form.content.label }}<br>
+         {{ form.content(size=36) }}
+      </p>
+      <p>
+         {{ form.expiration.label }}<br>
+         {{ form.expiration(size=36) }}
+      </p>
+      <p>{{ form.submit() }}</p>
+   </form>
+{% endblock %}
